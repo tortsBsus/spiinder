@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { AuthContextProvider } from "./context/AuthContext";
+
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans",});
 
@@ -15,12 +18,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <body   className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable
-        )}>{children}</body>
+        )}>
+          <AuthContextProvider>
+          {children}
+          </AuthContextProvider>
+          </body>
     </html>
   );
 }
