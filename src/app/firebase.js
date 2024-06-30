@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: String(process.env.GOOGLE_AUTH_API_KEY),
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_AUTH_API_KEY,
   authDomain: "spiinder.firebaseapp.com",
   projectId: "spiinder",
   storageBucket: "spiinder.appspot.com",
