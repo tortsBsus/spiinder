@@ -4,7 +4,7 @@ import { UserAuth } from '../context/AuthContext';
 import { Progress } from "@/components/ui/progress"
 
  
-function dashboard() {
+function Dashboard() {
 
   const {user} = UserAuth();
   const [loading, setLoading] = useState(true);
@@ -21,11 +21,11 @@ function dashboard() {
   return (
     <div className="bg-gradient-to-br from-[#9EF01A] to-[#38B000] h-screen w-screen p-5 md:p-20">
       {loading? (<Progress value={33} />) : !user ? <p>This is a protected page, login to see this page</p> :
-      <p>{user.displayName}'s dashboard</p>
+      <p>{user.displayName}&apos;s dashboard</p>
       }
       
       </div>
   )
 }
 
-export default dashboard
+export default Dashboard
