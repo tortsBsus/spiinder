@@ -59,7 +59,7 @@ export default function Home() {
   useEffect(() => {
     const checkAuthentication = async () => {
       if(user)setMyTrigger(true);
-      await new Promise((resolve) => setTimeout(resolve, 10000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setLoading(false);
     }
     checkAuthentication();
