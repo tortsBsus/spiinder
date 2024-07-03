@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { AuthContextProvider } from "./context/AuthContext";
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         )}>
           <AuthContextProvider>
           {children}
+          <Analytics />
           </AuthContextProvider>
           </body>
     </html>
