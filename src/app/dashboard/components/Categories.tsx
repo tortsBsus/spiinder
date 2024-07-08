@@ -38,13 +38,10 @@ const Categories : React.FC<CategoriesProps> = ({updateCategories, onStepChange}
                 <h3 className='mx-2'>Category 2</h3>
                 <Input className='mx-2' value={category2} onChange={handleCategory2Change} />
             </div>
-            <div className='flex flex-row'>
-                <h3 className='mx-2'>Category 3</h3> 
-                <Input className='mx-2' value={category3} onChange={handleCategory3Change} />
-            </div>
+          
             </div>    
             <div className='my-5'>
-                <h3> Your Categories are :{`${category1}, ${category2}, ${category3}`} </h3>
+                <h3> Your Categories are : {`${category1}, ${category2}`} </h3>
             </div>
           <Button className='w-full my-5' onClick={() => nextStep()}> Move to the next step </Button>   
     </div>
