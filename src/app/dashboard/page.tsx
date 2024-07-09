@@ -30,7 +30,7 @@ function Dashboard() {
   const [step, setStep] = useState<number>(1);
   const navigate = useRouter();
   const [csvData, setCsvData] = useState<Object>({});
-  const [categories, setCategories] = useState<string[]>(["Cat1", "Cat2", "Cat3", "Cat4"])
+  const [categories, setCategories] = useState<string[]>(["Cat1", "Cat2"])
 
 
   const handleSignOut = async () => {
@@ -69,7 +69,7 @@ function Dashboard() {
 
   return (
 
-    <div className="bg-[#06af94] min-h-screen w-screen p-2 md:px-10 md:pt-5">
+    <div className="bg-gradient-to-br from-[#06af94] to-[#38B000] min-h-screen w-screen p-2 md:px-10 md:pt-5">
 
 
 

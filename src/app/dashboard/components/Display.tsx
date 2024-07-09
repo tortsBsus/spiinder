@@ -103,10 +103,10 @@ const Display: React.FC<DisplayProps> = ({ onStepChange, csvData }) => {
  
 
   return (
-    <div className='my-15 border-white border-2 border-solid p-10 rounded-lg bg-white flex flex-col justify-center'>
-      <h1 className='font-bold text-xl my-10'>Display interface</h1>
+    <div className='my-15 w-full border-white border-2 border-solid p-10 rounded-lg bg-white flex flex-col justify-center'>
+      <h1 className='font-bold text-xl '>Graph view</h1>
 
-      <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      <ChartContainer config={chartConfig} className="min-h-[200px] md:w-1/2 self-center">
         <PieChart width={730} height={250}>
         <ChartTooltip
               cursor={false}
@@ -123,7 +123,7 @@ const Display: React.FC<DisplayProps> = ({ onStepChange, csvData }) => {
               fill="red" label />
         </PieChart>
       </ChartContainer>
-
+      <h1 className='font-bold text-xl mt-10 mb-2'>Table view</h1>
 
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
