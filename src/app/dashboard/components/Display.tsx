@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { TrendingUp } from "lucide-react"
+import { Label } from "recharts"
 import {
   Table,
   TableBody,
@@ -11,34 +13,34 @@ import {
 import { Button } from '@/components/ui/button';
 import { unparse } from 'papaparse';
 import Papa from 'papaparse';
- 
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie } from 'recharts';
 
 
 interface DisplayProps {
-  onStepChange: (step:number) => void;
+  onStepChange: (step: number) => void;
   csvData: any;
 }
 
 const data01 = [
-  { category: 'Group A', count: 400 },
-  { category: 'Group B', count: 300 },
-  { category: 'Group C', count: 300 },
-  { category: 'Group D', count: 200 },
+  { category: 'Group A', count: 400, fill: "var(--)" },
+  { category: 'Group B', count: 300, fill: "var(--)" },
+  { category: 'Group C', count: 300, fill: "var(--)" },
+  { category: 'Group D', count: 200, fill: "var(--)" },
 ];
 
-const chartConfig = {
- mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
-  },
+const chartConfigEx = {
+  visitors: {
+        label: "Visitors",
+      },
 } satisfies ChartConfig
 
 const Display: React.FC<DisplayProps> = ({ onStepChange, csvData }) => {
 
 
-const [chartData, setChartData] = useState(data01);
+  const [chartData, setChartData] = useState(data01);
+  const [chartConfig, setChartConfig] = useState(chartConfigEx);
 
   const downloadCSV = () => {
     let output = Papa.unparse(csvData);
@@ -63,6 +65,7 @@ const [chartData, setChartData] = useState(data01);
   const pieGeneration = () => {
     let count: { [key: string]: number } = {};
     
+
     for (let row of csvData) {
       if (row?.category in count) {
         count[row?.category] += 1;
@@ -70,32 +73,58 @@ const [chartData, setChartData] = useState(data01);
         count[row?.category] = 1;
       }
     }
-  
-    console.log(count);
-  
-    let formatted = [];
+
     
+
+    let formatted = [];
+    let colorNo = 1;
+
     for (let [category, countValue] of Object.entries(count)) {
-      formatted.push({ category, count: countValue });
+      formatted.push({ category, count: countValue, fill:"hsl(var(--chart-"+colorNo+"))"});
+      if(colorNo<6)colorNo++;
     }
-  
+    console.log(formatted);
     setChartData(formatted);
+    let tempChartConfig : any = {};
+    for(let x of formatted){
+      tempChartConfig[x.category] = {"label": x.category };
+    }
+
+    console.log(tempChartConfig);
+    setChartConfig((tempChartConfig));
+
+
+    
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     pieGeneration();
   }, []);
-
+ 
 
   return (
-    <div className='my-15 border-white border-2 border-solid p-10 rounded-lg bg-white'>
+    <div className='my-15 border-white border-2 border-solid p-10 rounded-lg bg-white flex flex-col justify-center'>
       <h1 className='font-bold text-xl my-10'>Display interface</h1>
-      
+
       <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
-      <PieChart width={730} height={250}>
-  <Pie data={chartData} dataKey="count" nameKey="category" cx="50%" cy="50%" outerRadius={50} fill="red" label />
-</PieChart>
-    </ChartContainer>
+        <PieChart width={730} height={250}>
+        <ChartTooltip
+              cursor={false}
+              content={<ChartTooltipContent hideLabel />}
+            />
+          <Pie data={chartData} 
+              dataKey="count" 
+              nameKey="category" 
+              cx="50%" 
+              cy="50%" 
+              // outerRadius={50} 
+              innerRadius={60}
+              strokeWidth={5} 
+              fill="red" label />
+        </PieChart>
+      </ChartContainer>
+
+
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
@@ -108,7 +137,7 @@ const [chartData, setChartData] = useState(data01);
           </TableRow>
         </TableHeader>
         <TableBody>
-          {csvData && csvData.map((row: any, index:any) =>
+          {csvData && csvData.map((row: any, index: any) =>
           (
             <TableRow key={index}>
               <TableCell className="font-medium">{row[""]}</TableCell>
@@ -122,9 +151,9 @@ const [chartData, setChartData] = useState(data01);
 
         </TableBody>
       </Table>
- 
 
-      <Button onClick={() => downloadCSV()}>Download updated CSV</Button>
+
+      <Button className='mt-20' onClick={() => downloadCSV()}>Download updated CSV</Button>
       <a id="downloadLink"></a>
 
     </div>
@@ -132,3 +161,10 @@ const [chartData, setChartData] = useState(data01);
 }
 
 export default Display
+
+
+
+
+
+
+
