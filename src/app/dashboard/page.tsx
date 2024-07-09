@@ -66,14 +66,6 @@ function Dashboard() {
     checkAuthentication();
   }, [user]);
 
-useEffect(() => {
-  console.log(step);  
-}, [step])
-
-
-
-
-
 
   return (
 
@@ -86,7 +78,7 @@ useEffect(() => {
 
           <p>This is a protected page, login to see this page</p> :
           // Dashboard ------------------------------------------------------------------------------------------------------------------------------------------>
-          <div className='flex flex-col border-white border-2 border-solid h-screen justify-between rounded-lg bg-white p-5'>
+          <div className='flex flex-col border-white border-2 border-solid min-h-screen justify-between rounded-lg bg-white p-5'>
             {/* ------------------------------------------------------------- Breadcrumb ------------------------------------------------------------- */}
             <Breadcrumb>
               <BreadcrumbList>
@@ -161,16 +153,18 @@ useEffect(() => {
 
 
             {/* ------------------------------------------------------------- Content ------------------------------------------------------------- */}
-            <div className='bg-[#21a095]/80 max-h-full max-w-full rounded-lg grow p-5 flex flex-col items-center justify-center'>
-
+            <div className='bg-[#21a095]/80 min-h-screen max-w-full rounded-lg grow p-5 flex flex-col items-center justify-center'>
+            
               {step == 1 && <>
                 <Upload onStepChange={updateSteps} updateCSV={updateCSVdata} />
               </>}
+            
 
               {step == 2 && <>
                 <Categories onStepChange={updateSteps} updateCategories={updateCategories} />
               </>}
               {step == 3 && <>
+              
                 <Swipe onStepChange={updateSteps} updateCSV={updateCSVdata} data={csvData} categories={categories} />
               </>}
               {step == 4 && <>
