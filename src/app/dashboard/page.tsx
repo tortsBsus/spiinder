@@ -69,16 +69,17 @@ function Dashboard() {
 
   return (
 
-    <div className="bg-gradient-to-br from-[#06af94] to-[#38B000] min-h-screen w-screen p-2 md:px-10 md:pt-5">
+    <div className="font-general bg-secondary min-h-screen max-w-screen">
 
 
 
       {
-        loading ? (<Progress value={33} />) : !user ?
-
-          <p>This is a protected page, login to see this page</p> :
+        !user ? <p>This is a protected page, login to see this page</p> :
           // Dashboard ------------------------------------------------------------------------------------------------------------------------------------------>
-          <div className='flex flex-col border-white border-2 border-solid min-h-screen justify-between rounded-lg bg-white p-5'>
+          <div className=' flex flex-col max-w-screen min-h-screen justify-between'>
+            <div className='p-5 rounded-b-sm bg-primary'>
+
+            
             {/* ------------------------------------------------------------- Breadcrumb ------------------------------------------------------------- */}
             <Breadcrumb>
               <BreadcrumbList>
@@ -141,19 +142,19 @@ function Dashboard() {
             <div className='flex justify-between align-middle items-center my-2'>
 
               {/* ------------------------------------------------------------- Title ------------------------------------------------------------- */}
-              <div className='w-2/3'>
-                <h1 className='text-xl font-bold mt-2' >{user.displayName}&apos;s dashboard</h1>
+              <div className=' font-gambetta w-2/3'>
+                <h1 className='text-xl font-bold mt-2' >{user.displayName}&apos;s Dashboard</h1>
               </div>
 
               {/* ------------------------------------------------------------- Footer ------------------------------------------------------------- */}
               <div className='flex flex-col justify-end align-end items-end h-full w-1/3 '>
-                <Button variant="outline" className="md:w-full text-wrap bg-[#1fab8c]  " onClick={() => handleSignOut()}>Sign Out?</Button>
+                <Button variant="outline" className="md:w-full  text-wrap bg-secondary/20 border border-solid border-secondary rounded-full hover:bg-secondary/80 font-semibold  " onClick={() => handleSignOut()}>Sign Out?</Button>
               </div>
             </div>
 
-
+            </div>
             {/* ------------------------------------------------------------- Content ------------------------------------------------------------- */}
-            <div className='bg-[#21a095]/80 min-h-screen max-w-full rounded-lg grow p-5 flex flex-col items-center justify-center'>
+            <div className='container bg-secondary/80 min-h-screen max-w-full rounded-lg grow p-5 flex flex-col items-center justify-center'>
             
               {step == 1 && <>
                 <Upload onStepChange={updateSteps} updateCSV={updateCSVdata} />

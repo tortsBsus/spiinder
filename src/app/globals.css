@@ -1,6 +1,184 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
+
+/* Gambetta Font Faces */
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-ExtraLightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gambetta";
+  src: url("/fonts/Gambetta_Complete/Gambetta-VariableItalic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* GeneralSans Font Faces */
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-ExtraLightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans_Complete/GeneralSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
 
   @layer base {
     :root {

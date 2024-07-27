@@ -89,37 +89,37 @@ const Upload: React.FC<UploadProps> = ({ onStepChange, updateCSV }) => {
 
   return (
     <>
-      <div className='flex flex-col md:flex-row justify-center  w-full'>
+      <div className=' font-general flex flex-col md:flex-row justify-center  w-full'>
         {/* ------------------------------------------------------------- Upload CSV ------------------------------------------------------------- */}
-        <Card className={`m-3 grow  ${uploadMethod == "CSV" ? "bg-[#38B000]/70 border-2 border-solid border-[#38B000]" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("CSV")}>
+        <Card className={`m-3 grow  ${uploadMethod == "CSV" ? "bg-primary/45 border-2 border-solid border-accent" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("CSV")}>
           <CardHeader>
             <CardTitle>Upload CSV</CardTitle>
-            <CardDescription className={`${uploadMethod == "CSV" && "text-slate-900"}`}>Upload your CSV file that is in the specified format</CardDescription>
+            <CardDescription className={`font-gambetta ${uploadMethod == "CSV" && "text-slate-900"}`}>Upload your CSV file that is in the specified format</CardDescription>
           </CardHeader>
           <CardContent>
             
           </CardContent>
         </Card>
         {/* ------------------------------------------------------------- Google Sheets ------------------------------------------------------------- */}
-        {/* <Card className={`m-3 grow  ${uploadMethod == "Sheets" ? "bg-[#38B000]/70 border-2 border-solid border-[#38B000]" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("Sheets")}>
+        {/* <Card className={`m-3 grow  ${uploadMethod == "Sheets" ? "bg-primary/45 border-2 border-solid border-accent" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("Sheets")}>
           <CardHeader>
             <CardTitle>Google Sheets</CardTitle>
-            <CardDescription className={`${uploadMethod == "Sheets" && "text-slate-900"}`}>Connect a spreadsheet with your data</CardDescription>
+            <CardDescription className={`font-gambetta ${uploadMethod == "Sheets" && "text-slate-900"}`}>Connect a spreadsheet with your data</CardDescription>
           </CardHeader>
 
         </Card> */}
         {/* ------------------------------------------------------------- Example ------------------------------------------------------------- */}
-        <Card className={`m-3 grow  ${uploadMethod == "Example" ? "bg-[#38B000]/70 border-2 border-solid border-[#38B000]" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("Example")}>
+        <Card className={`m-3 grow  ${uploadMethod == "Example" ? "bg-primary/45 border-2 border-solid border-accent" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={() => setUploadMethod("Example")}>
           <CardHeader>
             <CardTitle>Example File</CardTitle>
-            <CardDescription className={`${uploadMethod == "Example" && "text-slate-900"}`}>Try Spiinder using a sample file!</CardDescription>
+            <CardDescription className={`font-gambetta ${uploadMethod == "Example" && "text-slate-900"}`}>Try Spiinder using a sample file!</CardDescription>
           </CardHeader>
         </Card>
         {/* ------------------------------------------------------------- PDF ------------------------------------------------------------- */}
-        {/* <Card className={`m-3 grow  ${uploadMethod=="Statement" ? "bg-[#38B000]/70 border-2 border-solid border-[#38B000]" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={()=>setUploadMethod("Statement")}>
+        {/* <Card className={`m-3 grow  ${uploadMethod=="Statement" ? "bg-primary/45 border-2 border-solid border-accent" : "hover:-translate-y-2 hover:translate-x-1 hover:bg-slate-200"}`} onClick={()=>setUploadMethod("Statement")}>
           <CardHeader>
             <CardTitle>PDF Bank Statement</CardTitle>
-            <CardDescription className={`${uploadMethod=="Statement" && "text-slate-900"}`}>Upload your Bank statement and it will be parsed automatically!</CardDescription>
+            <CardDescription className={`font-gambetta ${uploadMethod=="Statement" && "text-slate-900"}`}>Upload your Bank statement and it will be parsed automatically!</CardDescription>
           </CardHeader>
         </Card> */}
       </div>
@@ -136,7 +136,7 @@ const Upload: React.FC<UploadProps> = ({ onStepChange, updateCSV }) => {
         </DialogContent>
       </Dialog>
 
-     {receivedData.length != 0 && <Button className='m-5 w-full bg-[#38B000]' onClick={() => checkUpload()}> Move to the next step </Button> } 
+     {receivedData.length != 0 && <Button className='m-10 w-full bg-accent text-primary hover:text-accent' onClick={() => checkUpload()}> Move to the next step </Button> } 
     </>
   )
 }
