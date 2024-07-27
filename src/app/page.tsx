@@ -60,21 +60,20 @@ export default function Home() {
   return (
     <div ref={hero} className="bg-secondary flex h-screen w-screen ">
       <div id="heroContainer" 
-      className="h-2/3 w-screen 
-      self-end 
+      className="h-2/3
+      self-center
       bg-primary 
       container 
-      shadow-2xl 
-      border-2 border-solid border-red-400
-      flex flex-col justify-center">
-        <div>
+      shadow-2xl       
+      flex flex-col justify-center items-center">
+
 
         
 
         <h1 className="text-2xl md:text-6xl font-general  font-extrabold text-accent ">
           Categorise your Spends via Swipes
         </h1>
-        <h2 className="text-sm md:text-xl font-semibold font-gambetta text-accent md:w-1/2 mt-3 ">
+        <h2 className="text-sm md:text-xl text-center font-semibold font-gambetta text-accent md:w-1/2 mt-3 ">
           An expense tracker that lets you swipe your transactions into
           different categories and understand where your money goes
         </h2>
@@ -138,8 +137,6 @@ export default function Home() {
           </>
         )}
       </div>
-      </div>
-      {/* center */}
     </div>
   );
 }
