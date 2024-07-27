@@ -74,7 +74,7 @@ function Dashboard() {
 
 
       {
-        !user ? <p>This is a protected page, login to see this page</p> :
+        !user ? <div className='font-general font-semibold bg-primary p-10 self-center text-center'>This is a protected page, login to see this page</div> :
           // Dashboard ------------------------------------------------------------------------------------------------------------------------------------------>
           <div className=' flex flex-col max-w-screen min-h-screen justify-between'>
             <div className='p-5 rounded-b-sm bg-primary'>
