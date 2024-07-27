@@ -59,8 +59,18 @@ export default function Home() {
 
   return (
     <div ref={hero} className="bg-secondary flex h-screen w-screen ">
-      <div id="heroContainer" className="h-2/3 w-screen self-end bg-primary container shadow-2xl flex flex-col justify-center">
-        {/* <h1 className="font-extrabold font-general mt-5 mb-10">SPIINDER</h1> */}
+      <div id="heroContainer" 
+      className="h-2/3 w-screen 
+      self-end 
+      bg-primary 
+      container 
+      shadow-2xl 
+      border-2 border-solid border-red-400
+      flex flex-col justify-center">
+        <div>
+
+        
+
         <h1 className="text-2xl md:text-6xl font-general  font-extrabold text-accent ">
           Categorise your Spends via Swipes
         </h1>
@@ -127,6 +137,7 @@ export default function Home() {
             </Button>
           </>
         )}
+      </div>
       </div>
       {/* center */}
     </div>
