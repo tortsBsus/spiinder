@@ -101,19 +101,7 @@ function Dashboard() {
                           <BreadcrumbLink onClick={() => setStep(1)}>Upload</BreadcrumbLink>
                         </BreadcrumbItem>
                       </>)}
-                {step > 1 && (step == 2 ?
-                  <>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                      <BreadcrumbPage>Categories</BreadcrumbPage>
-                    </BreadcrumbItem>
-                  </> : <>
-                    <BreadcrumbSeparator />
-                    <BreadcrumbItem>
-                      <BreadcrumbLink onClick={() => setStep(2)}>Categories</BreadcrumbLink>
-                    </BreadcrumbItem>
-                  </>)}
-                {step > 2 && (step == 3 ?
+                  {step > 1 && (step == 2 ?
                   <>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
@@ -122,10 +110,10 @@ function Dashboard() {
                   </> : <>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                      <BreadcrumbLink onClick={() => setStep(3)}>Swipe</BreadcrumbLink>
+                      <BreadcrumbLink onClick={() => setStep(2)}>Swipe</BreadcrumbLink>
                     </BreadcrumbItem>
                   </>)}
-                {step > 3 && (step == 4 ?
+                  {step > 2 && (step == 3 ?
                   <>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
@@ -134,7 +122,7 @@ function Dashboard() {
                   </> : <>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                      <BreadcrumbLink onClick={() => setStep(4)}>Graphs</BreadcrumbLink>
+                      <BreadcrumbLink onClick={() => setStep(3)}>Graphs</BreadcrumbLink>
                     </BreadcrumbItem>
                   </>)}
               </BreadcrumbList>
@@ -162,14 +150,11 @@ function Dashboard() {
             
 
               {step == 2 && <>
-                <Categories onStepChange={updateSteps} updateCategories={updateCategories} />
+                <Swipe onStepChange={updateSteps} updateCSV={updateCSVdata} data={csvData}  />
               </>}
               {step == 3 && <>
-              
-                <Swipe onStepChange={updateSteps} updateCSV={updateCSVdata} data={csvData} categories={categories} />
-              </>}
-              {step == 4 && <>
                 <Display onStepChange={updateSteps} csvData={csvData} />
+                
               </>}
             </div>
 
